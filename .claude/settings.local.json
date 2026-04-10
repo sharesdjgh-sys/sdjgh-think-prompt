@@ -3,7 +3,16 @@
     "allow": [
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:github.com)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(npm install:*)",
+      "Bash(npx @vite-pwa/assets-generator --preset minimal public/favicon.svg)",
+      "Bash(npm uninstall:*)",
+      "Bash(npx tsc:*)",
+      "Bash(node_modules/.bin/tsc -b)",
+      "Bash(./node_modules/.bin/tsc:*)",
+      "Bash(node_modules/.bin/tsc --project tsconfig.node.json --noEmit)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(npx vercel:*)"
     ]
   }
 }
