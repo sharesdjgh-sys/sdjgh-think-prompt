@@ -5,7 +5,7 @@ import Anthropic from '@anthropic-ai/sdk'
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
-import { CHAT_SYSTEM_PROMPT } from '../api/prompts'
+import { CHAT_SYSTEM_PROMPT } from './api/prompts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
