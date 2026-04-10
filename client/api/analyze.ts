@@ -1,5 +1,5 @@
 import Anthropic from "@anthropic-ai/sdk";
-import { CHAT_SYSTEM_PROMPT } from "./prompts";
+import { CHAT_SYSTEM_PROMPT } from "./prompts.js";
 
 export default async function handler(req: any, res: any) {
   if (req.method !== "POST") {
