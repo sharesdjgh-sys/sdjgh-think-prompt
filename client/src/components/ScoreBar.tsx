@@ -15,7 +15,6 @@ const COLORS = [
   { main: "#ec4899", bg: "#fdf2f8", border: "#fbcfe8", track: "#fbcfe8" },
 ];
 
-const ICONS = ["🎯", "🗂️", "📐", "📋", "🎭"];
 
 function getGrade(score: number) {
   if (score >= 80) return { text: "우수", color: "#10b981" };
