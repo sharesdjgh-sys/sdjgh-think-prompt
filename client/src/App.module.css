@@ -333,12 +333,13 @@
 .criteriaLabel {
   font-size: 13px;
   font-weight: 700;
-  min-width: 44px;
+  min-width: 48px;
 }
 
 .criteriaDesc {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--gray-500);
+  line-height: 1.5;
 }
 
 /* ── Responsive ── */

@@ -8,11 +8,11 @@ import styles from "./App.module.css";
 type Step = "tutorial" | "input" | "loading" | "result";
 
 const CRITERIA = [
-  { label: "명확성", desc: "원하는 것을 분명히", color: "#6366f1", bg: "#eef2ff", border: "#c7d2fe" },
-  { label: "맥락",   desc: "배경 정보 포함",    color: "#0ea5e9", bg: "#f0f9ff", border: "#bae6fd" },
-  { label: "범위",   desc: "적절한 질문 크기",  color: "#10b981", bg: "#f0fdf4", border: "#bbf7d0" },
-  { label: "형식",   desc: "출력 형태 지정",    color: "#f59e0b", bg: "#fffbeb", border: "#fde68a" },
-  { label: "역할",   desc: "AI 역할 부여",      color: "#ec4899", bg: "#fdf2f8", border: "#fbcfe8" },
+  { label: "명확성", desc: "무엇을 원하는지 정확하고 구체적으로 표현하기",         color: "#6366f1", bg: "#eef2ff", border: "#c7d2fe" },
+  { label: "맥락",   desc: "나의 상황, 목적, 배경을 함께 알려주기",               color: "#0ea5e9", bg: "#f0f9ff", border: "#bae6fd" },
+  { label: "범위",   desc: "질문의 크기와 깊이를 적절하게 한정하기",               color: "#10b981", bg: "#f0fdf4", border: "#bbf7d0" },
+  { label: "형식",   desc: "원하는 답변 형태(표·목록·단계별 등)를 미리 지정하기", color: "#f59e0b", bg: "#fffbeb", border: "#fde68a" },
+  { label: "역할",   desc: "AI가 어떤 전문가 관점에서 답하면 좋을지 설정하기",     color: "#ec4899", bg: "#fdf2f8", border: "#fbcfe8" },
 ];
 
 const HOW_TO = [
