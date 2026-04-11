@@ -1,4 +1,5 @@
 export interface ChatAnalysisResult {
+  user_type: "student" | "adult" | "general";
   scores: {
     clarity: number;
     context: number;

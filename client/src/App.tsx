@@ -115,7 +115,7 @@ export default function App() {
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder={"예) 영어 에세이는 어떻게 써야 하나요?\n예) 수학 공부를 잘하려면 어떻게 해야 하나요?\n예) 수행평가 발표는 어떻게 준비하면 좋을까요?\n예) 중간고사 시험 공부 계획을 짜주세요"}
+              placeholder={"예) 수행평가 발표는 어떻게 준비하면 좋을까요?\n예) 수학 공부를 잘하려면 어떻게 해야 하나요?\n예) 팀 회의 발표 자료를 어떻게 구성하면 좋을까요?\n예) 이직 자기소개서를 잘 쓰려면 어떻게 해야 하나요?"}
               disabled={step === "loading"}
               rows={5}
             />
