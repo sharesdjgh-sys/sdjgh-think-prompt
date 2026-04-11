@@ -61,6 +61,7 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+        globIgnores: ['think prompt-logo.png', 'think prompt.jpg'],
         runtimeCaching: [
           {
             // API 호출은 캐시하지 않음
