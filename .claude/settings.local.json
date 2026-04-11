@@ -12,7 +12,11 @@
       "Bash(./node_modules/.bin/tsc:*)",
       "Bash(node_modules/.bin/tsc --project tsconfig.node.json --noEmit)",
       "Bash(echo \"EXIT:$?\")",
-      "Bash(npx vercel:*)"
+      "Bash(npx vercel:*)",
+      "Bash(node -e \"require\\('sharp'\\)\")",
+      "Bash(magick --version)",
+      "Bash(convert --version)",
+      "Bash(node -e ':*)"
     ]
   }
 }
