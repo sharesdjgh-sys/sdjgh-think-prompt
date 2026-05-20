@@ -466,6 +466,75 @@
   flex-shrink: 0;
 }
 
+/* ── AI 바로가기 ── */
+.aiLinksDesc {
+  font-size: 14px;
+  color: var(--gray-500);
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.aiLinks {
+  display: flex;
+  gap: 8px;
+}
+
+.aiLink {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.18s var(--ease-out);
+  border: 1.5px solid transparent;
+}
+
+.aiLinkChatgpt {
+  background: #f0faf7;
+  color: #0a7a60;
+  border-color: rgba(16,163,127,0.2);
+}
+.aiLinkChatgpt:hover {
+  background: #d4f4eb;
+  border-color: rgba(16,163,127,0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16,163,127,0.12);
+}
+
+.aiLinkGemini {
+  background: #f0f5ff;
+  color: #2563eb;
+  border-color: rgba(66,133,244,0.2);
+}
+.aiLinkGemini:hover {
+  background: #dbeafe;
+  border-color: rgba(66,133,244,0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(66,133,244,0.12);
+}
+
+.aiLinkClaude {
+  background: #fdf6f0;
+  color: #c2410c;
+  border-color: rgba(194,65,12,0.2);
+}
+.aiLinkClaude:hover {
+  background: #ffedd5;
+  border-color: rgba(194,65,12,0.35);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(194,65,12,0.1);
+}
+
+@media (max-width: 480px) {
+  .aiLinks {
+    flex-direction: column;
+  }
+}
+
 /* ── 애니메이션 ── */
 @keyframes spin {
   to { transform: rotate(360deg); }

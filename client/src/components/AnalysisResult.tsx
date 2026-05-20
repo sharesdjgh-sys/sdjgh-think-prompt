@@ -36,6 +36,7 @@ export default function AnalysisResult({ original, result, onReset }: Props) {
   const [practiceResult, setPracticeResult] = useState<ChatAnalysisResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [copiedOriginal, setCopiedOriginal] = useState(false);
 
   async function handlePractice() {
     if (!practice.trim()) return;
@@ -52,6 +53,12 @@ export default function AnalysisResult({ original, result, onReset }: Props) {
     navigator.clipboard.writeText(result.improved_prompt);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  }
+
+  function handleCopyOriginal() {
+    navigator.clipboard.writeText(original);
+    setCopiedOriginal(true);
+    setTimeout(() => setCopiedOriginal(false), 2000);
   }
 
   const diff = practiceResult ? practiceResult.total - result.total : 0;
@@ -78,9 +85,19 @@ export default function AnalysisResult({ original, result, onReset }: Props) {
 
         {/* 원본 프롬프트 */}
         <div className={s.card}>
-          <div className={s.sectionMeta}>
-            <iconify-icon icon="solar:pen-bold" width="14" height="14" style={{ color: "var(--gray-400)" }} />
-            <span className={s.sectionLabel}>입력한 프롬프트</span>
+          <div className={s.improvedHeader}>
+            <div className={s.sectionMeta}>
+              <iconify-icon icon="solar:pen-bold" width="14" height="14" style={{ color: "var(--gray-400)" }} />
+              <span className={s.sectionLabel}>입력한 프롬프트</span>
+            </div>
+            <button
+              onClick={handleCopyOriginal}
+              className={`${s.copyBtn} ${copiedOriginal ? s.copyBtnCopied : s.copyBtnDefault}`}
+            >
+              {copiedOriginal
+                ? <><iconify-icon icon="solar:check-circle-bold" width="13" height="13" />복사됨</>
+                : <><iconify-icon icon="solar:copy-bold" width="13" height="13" />복사</>}
+            </button>
           </div>
           <div className={s.originalBox}>{original}</div>
         </div>
@@ -209,6 +226,32 @@ export default function AnalysisResult({ original, result, onReset }: Props) {
               </div>
             </div>
           )}
+        </div>
+
+        {/* AI 바로가기 */}
+        <div className={s.card}>
+          <div className={s.sectionMeta}>
+            <iconify-icon icon="solar:rocket-bold" width="14" height="14" style={{ color: "var(--primary)" }} />
+            <span className={s.sectionLabel} data-accent>AI에서 직접 써보기</span>
+          </div>
+          <p className={s.aiLinksDesc}>개선된 프롬프트를 복사해서 아래 AI에 직접 입력해 보세요.</p>
+          <div className={s.aiLinks}>
+            <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" className={`${s.aiLink} ${s.aiLinkChatgpt}`}>
+              <iconify-icon icon="simple-icons:openai" width="17" height="17" />
+              <span>ChatGPT</span>
+              <iconify-icon icon="solar:arrow-right-up-bold" width="12" height="12" style={{ marginLeft: "auto", opacity: 0.5 }} />
+            </a>
+            <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" className={`${s.aiLink} ${s.aiLinkGemini}`}>
+              <iconify-icon icon="simple-icons:googlegemini" width="17" height="17" />
+              <span>Gemini</span>
+              <iconify-icon icon="solar:arrow-right-up-bold" width="12" height="12" style={{ marginLeft: "auto", opacity: 0.5 }} />
+            </a>
+            <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" className={`${s.aiLink} ${s.aiLinkClaude}`}>
+              <iconify-icon icon="simple-icons:anthropic" width="17" height="17" />
+              <span>Claude</span>
+              <iconify-icon icon="solar:arrow-right-up-bold" width="12" height="12" style={{ marginLeft: "auto", opacity: 0.5 }} />
+            </a>
+          </div>
         </div>
 
       </div>
